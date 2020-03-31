@@ -31,8 +31,6 @@ namespace Project_Two
                     sbDataList.Add(new superBowl(sbData[0], sbData[1], Convert.ToInt32(sbData[2]), sbData[3], sbData[4], sbData[5], Convert.ToInt32(sbData[6]),
                                    sbData[7], sbData[8], sbData[9], Convert.ToInt32(sbData[10]), sbData[11], sbData[12], sbData[13], sbData[14]));
                     Console.WriteLine(sbDataList[sbDataList.Count -1]);
-
-                    line = read.ReadLine();
                 }
 
                 read.Dispose();
