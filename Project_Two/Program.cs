@@ -37,6 +37,7 @@ namespace Project_Two
                 read.Dispose();
                 input.Dispose();
 
+                //Below outputs the list of the winning teams
                 Console.WriteLine("List of Winning Teams");
                 Console.WriteLine("---------------------");
 
@@ -45,6 +46,14 @@ namespace Project_Two
                     Console.WriteLine(sb.printWinner());
                 }
 
+                //Below outputs the list of the top attended superbowl counts
+                Console.WriteLine("          Top 5 Attended Superbowls         ");
+                Console.WriteLine("---------------------------------------------\n");
+                var attendanceQuery = (from sb in sbDataList orderby sb.Attendance descending select sb).ToList<SuperBowl>().Take(5);
+                attendanceQuery.ToList<SuperBowl>().ForEach(x => Console.WriteLine(String.Format("{0:n0}", x.Attendance))); 
+                Console.WriteLine("\n");
+
+                //Below outputs players that won MVP for than once as well as their team and the team they beat
                 Console.WriteLine("List of Players That Won Mvp More Than 1 Time");
                 Console.WriteLine("---------------------------------------------\n");
 
@@ -56,12 +65,12 @@ namespace Project_Two
 
                 foreach (var sb in MVPCount)
                 {
-                    Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times.\n");
-                    Console.WriteLine("          Their winning teams          ");
-                    Console.WriteLine("----------------------------------------");
+                    Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times\n");
+                    Console.WriteLine("             Their winning teams           ");
+                    Console.WriteLine("---------------------------------------------");
                     foreach (var info in sb)
                     {
-                        Console.WriteLine($"Their winning team: {info.winningTeam}");
+                        Console.WriteLine($"Their winning team: {info.winningTeam}"); //using methods to pull data from a superbowl
                         Console.WriteLine($"The team they beat: {info.losingTeam}");
                         Console.WriteLine($"Superbowl took place: {info.Date}\n");
                     }
