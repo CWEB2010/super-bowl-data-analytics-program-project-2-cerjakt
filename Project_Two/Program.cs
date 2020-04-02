@@ -57,6 +57,10 @@ namespace Project_Two
                 foreach (var sb in MVPCount)
                 {
                     Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times.");
+                    foreach (var info in sb)
+                    {
+                        Console.WriteLine($"The winning team was: {info.winningTeam}");
+                    }
                 }
             }
 
