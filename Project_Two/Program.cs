@@ -1,6 +1,7 @@
 ﻿using System;
 using System.IO;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace Project_Two
 {
@@ -36,9 +37,26 @@ namespace Project_Two
                 read.Dispose();
                 input.Dispose();
 
+                Console.WriteLine("List of Winning Teams");
+                Console.WriteLine("---------------------");
+
                 foreach (SuperBowl sb in sbDataList)
                 {
                     Console.WriteLine(sb.printWinner());
+                }
+
+                Console.WriteLine("List of Players That Won Mvp More Than 1 Time");
+                Console.WriteLine("---------------------------------------------");
+
+                var MVPCount = from sb in sbDataList //defining an MVPCount variable that considers each superbowl(sb) in the superbowl data list
+                               group sb by sb.MVP into MVPGroup //creates a group of MVP data to be counted
+                               where MVPGroup.Count() > 1 //only adds the MVP to the group if the player was MVP more than once
+                               orderby MVPGroup.Key //orders the list from least amount of MVPs to most
+                               select MVPGroup; //returns the ordered list of MVPs in a list format
+
+                foreach (var sb in MVPCount)
+                {
+                    Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times.");
                 }
             }
 
