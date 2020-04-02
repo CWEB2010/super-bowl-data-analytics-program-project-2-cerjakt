@@ -46,7 +46,7 @@ namespace Project_Two
                 }
 
                 Console.WriteLine("List of Players That Won Mvp More Than 1 Time");
-                Console.WriteLine("---------------------------------------------");
+                Console.WriteLine("---------------------------------------------\n");
 
                 var MVPCount = from sb in sbDataList //defining an MVPCount variable that considers each superbowl(sb) in the superbowl data list
                                group sb by sb.MVP into MVPGroup //creates a group of MVP data to be counted
@@ -56,11 +56,16 @@ namespace Project_Two
 
                 foreach (var sb in MVPCount)
                 {
-                    Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times.");
+                    Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times.\n");
+                    Console.WriteLine("          Their winning teams          ");
+                    Console.WriteLine("----------------------------------------");
                     foreach (var info in sb)
                     {
-                        Console.WriteLine($"The winning team was: {info.winningTeam}");
+                        Console.WriteLine($"Their winning team: {info.winningTeam}");
+                        Console.WriteLine($"The team they beat: {info.losingTeam}");
+                        Console.WriteLine($"Superbowl took place: {info.Date}\n");
                     }
+                    Console.WriteLine("\n");
                 }
             }
 
