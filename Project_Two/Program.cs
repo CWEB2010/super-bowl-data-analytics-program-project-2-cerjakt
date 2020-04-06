@@ -11,18 +11,35 @@ namespace Project_Two
         {
             //Reading from a file
             //Declaring variables
-            const string PATH = @"C:\Users\Jake\Documents\College\SENG Semester 2\Advanced Programming\Projects\Project 2\Project_Two\Super_Bowl_Project.csv";
-
             FileStream input;
             StreamReader read;
-            string line;
+            string primingValue;
             string[] sbData;
+            string csvPATH = "";
+            string txtPATH = "";
+
+            //Program Introduction
+            Console.WriteLine("Welcome to the Superbowl CSV file reader/");
+            Console.WriteLine("This Program will read the data from the CSV file and write it to a new file\n");
+            Console.WriteLine("Where do you want to read the csv file from?\n");
+            Console.WriteLine("for example:\n C:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.csv\n");
+
+            //User defines the PATH to the csv
+            Console.WriteLine("Input the PATH to the CSV File:");
+            csvPATH = @Console.ReadLine();
+
+            Console.WriteLine("Where do you want to read the csv file from?\n");
+            Console.WriteLine("for example:\n C:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.txt\n");
+
+            //User defines the PATH to the txt
+            Console.WriteLine("Input the PATH to the TXT File:");
+            txtPATH = @Console.ReadLine();
 
             try
             {
-                input = new FileStream(PATH, FileMode.Open, FileAccess.Read);
+                input = new FileStream(csvPATH, FileMode.Open, FileAccess.Read);
                 read = new StreamReader(input);
-                line = read.ReadLine();
+                primingValue = read.ReadLine();
                 List<SuperBowl> sbDataList = new List<SuperBowl>();
 
                 //Establishing a looping structure to read in all the superbowl data
