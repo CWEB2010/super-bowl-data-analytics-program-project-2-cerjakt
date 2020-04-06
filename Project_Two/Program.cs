@@ -40,15 +40,15 @@ namespace Project_Two
                 input = new FileStream(csvPATH, FileMode.Open, FileAccess.Read);
                 read = new StreamReader(input);
                 primingValue = read.ReadLine();
-                List<SuperBowl> sbDataList = new List<SuperBowl>();
+                List<SuperBowl> sbDataList = new List<SuperBowl>(); //declaring superbowl data list
 
                 //Establishing a looping structure to read in all the superbowl data
                 while (!read.EndOfStream)
                 {
-                    sbData = read.ReadLine().Split(',');
-                    SuperBowl sb = new SuperBowl(sbData);
-                    sbDataList.Add(sb);
-                    //Console.WriteLine(sbDataList[sbDataList.Count -1]); //used to insure that the data is populating the list
+                    sbData = read.ReadLine().Split(','); //reads in each element between each comma and splits the comma off
+                    SuperBowl sb = new SuperBowl(sbData); //each element of the list will be called sb
+                    sbDataList.Add(sb); //adds a superbowl to the list
+                    //Console.WriteLine(sbDataList[sbDataList.Count - 1]); //used to insure that the data is populating the list
                 }
 
                 read.Dispose();
@@ -66,11 +66,30 @@ namespace Project_Two
                 //Below outputs the list of the top attended superbowl counts
                 Console.WriteLine("          Top 5 Attended Superbowls         ");
                 Console.WriteLine("---------------------------------------------\n");
-                var attendanceQuery = (from sb in sbDataList orderby sb.Attendance descending select sb).ToList<SuperBowl>().Take(5);
+                var attendanceQuery = (from sb in sbDataList orderby sb.Attendance descending select sb).ToList<SuperBowl>().Take(5); //selects 5 superbowls by top attendance from the superbowl data list and pust them into an attendance query list
                 attendanceQuery.ToList<SuperBowl>().ForEach(x => Console.WriteLine($"1. The date the team won: {x.Date}\n2. The winning team: {x.winningTeam}\n3. The losing team: {x.losingTeam}\n" +
                                                                                    $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
-                Console.WriteLine("\n");
 
+                //Below outputs the state that hosted the most superbowls
+                Console.WriteLine("    State That Hosted The Most Superbowls     ");
+                Console.WriteLine("---------------------------------------------\n");
+
+                var queryCount = (from sb in sbDataList //defining an hostCount variable that considers each superbowl(sb) in the superbowl data list
+                                  group sb by sb.State into nestedQuery //creates a group of state data to be counted
+                                  orderby nestedQuery.Count() descending //orders the list from least amount of states to most
+                                  select nestedQuery).First().Count(); //returns the ordered list of states in a list format
+
+                var hostCount = (from sb in sbDataList //defining an hostCount variable that considers each superbowl(sb) in the superbowl data list
+                                group sb by sb.State into hostGroup //creates a group of state data to be counted
+                                where hostGroup.Count() == queryCount
+                                orderby hostGroup.Key descending //orders the list from least amount of states to most
+                                select hostGroup).Take(1); //returns the ordered list of states in a list format
+
+                foreach (var sb in hostCount)
+                {
+                Console.WriteLine($"1. {sb.Key} hosted {sb.Count()} superbowls\n");
+                }
+                
                 //Below outputs players that won MVP for than once as well as their team and the team they beat
                 Console.WriteLine("List of Players That Won Mvp More Than 1 Time");
                 Console.WriteLine("---------------------------------------------\n");
@@ -94,7 +113,7 @@ namespace Project_Two
                     }
                     Console.WriteLine("\n");
                 }
-            }
+            } //end of try
 
             catch (Exception e)
             {
@@ -140,7 +159,7 @@ namespace Project_Two
                 this.City = sbData[13];
                 this.State = sbData[14];
             }
-            public string printWinner()
+            public string printWinner() //modularation of the print winners section
             {
                 return String.Format($"1. Winning Team: {winningTeam}\n2. Date: {Date}\n" +
                     $"3. The winning quarterback: {winningQB}\n4. Their winning coach was {winningCoach}\n" +
