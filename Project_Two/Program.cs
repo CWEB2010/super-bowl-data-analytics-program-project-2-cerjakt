@@ -37,6 +37,10 @@ namespace Project_Two
 
             try
             {
+                //declaring a file stream to write to the text file with the superbowl data
+                FileStream newFile = new FileStream(txtPATH, FileMode.Create, FileAccess.Write);
+                StreamWriter outfile = new StreamWriter(newFile);
+
                 input = new FileStream(csvPATH, FileMode.Open, FileAccess.Read);
                 read = new StreamReader(input);
                 primingValue = read.ReadLine();
@@ -74,20 +78,19 @@ namespace Project_Two
                 Console.WriteLine("    State That Hosted The Most Superbowls     ");
                 Console.WriteLine("---------------------------------------------\n");
 
-                var queryCount = (from sb in sbDataList //defining an hostCount variable that considers each superbowl(sb) in the superbowl data list
-                                  group sb by sb.State into nestedQuery //creates a group of state data to be counted
+                var queryCount = (from sb in sbDataList //defining a query count variable that is used to make a descending list
+                                  group sb by sb.State into nestedQuery //creates a group of state data and puts it into a nested query
                                   orderby nestedQuery.Count() descending //orders the list from least amount of states to most
-                                  select nestedQuery).First().Count(); //returns the ordered list of states in a list format
+                                  select nestedQuery).First().Count(); //takes the count of the first element in nestedQuery (the state that hosted the most superbowls)
 
-                var hostCount = (from sb in sbDataList //defining an hostCount variable that considers each superbowl(sb) in the superbowl data list
-                                group sb by sb.State into hostGroup //creates a group of state data to be counted
-                                where hostGroup.Count() == queryCount
-                                orderby hostGroup.Key descending //orders the list from least amount of states to most
-                                select hostGroup).Take(1); //returns the ordered list of states in a list format
+                var hostCount = (from sb in sbDataList //defining a host count variable that considers each superbowl(sb) in the superbowl data list
+                                group sb by sb.State into hostGroup //creates a group of state data and puts it into host group
+                                where hostGroup.Count() == queryCount //adds a condition to the list where the only element it contains can be equal to the most hosted count
+                                select hostGroup).Take(1); //takes the one element in the list
 
-                foreach (var sb in hostCount)
+                foreach (var sb in hostCount) //iterates through the list (even though it's just one element)
                 {
-                Console.WriteLine($"1. {sb.Key} hosted {sb.Count()} superbowls\n");
+                Console.WriteLine($"1. {sb.Key} hosted {sb.Count()} superbowls\n"); //writes the state and count to the terminal
                 }
                 
                 //Below outputs players that won MVP for than once as well as their team and the team they beat
