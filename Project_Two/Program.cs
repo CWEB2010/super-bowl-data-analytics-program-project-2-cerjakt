@@ -22,14 +22,14 @@ namespace Project_Two
             Console.WriteLine("Welcome to the Superbowl CSV file reader/");
             Console.WriteLine("This Program will read the data from the CSV file and write it to a new file\n");
             Console.WriteLine("Where do you want to read the csv file from?\n");
-            Console.WriteLine("for example:\n C:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.csv\n");
+            Console.WriteLine("for example:\nC:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.csv\n");
 
             //User defines the PATH to the csv
             Console.WriteLine("Input the PATH to the CSV File:");
             csvPATH = @Console.ReadLine();
 
             Console.WriteLine("Where do you want to read the csv file from?\n");
-            Console.WriteLine("for example:\n C:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.txt\n");
+            Console.WriteLine("for example:\nC:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.txt\n");
 
             //User defines the PATH to the txt
             Console.WriteLine("Input the PATH to the TXT File:");
@@ -55,8 +55,8 @@ namespace Project_Two
                 input.Dispose();
 
                 //Below outputs the list of the winning teams
-                Console.WriteLine("List of Winning Teams");
-                Console.WriteLine("---------------------");
+                Console.WriteLine("          List of Winning Teams         ");
+                Console.WriteLine("---------------------------------------------\n");
 
                 foreach (SuperBowl sb in sbDataList)
                 {
@@ -67,7 +67,8 @@ namespace Project_Two
                 Console.WriteLine("          Top 5 Attended Superbowls         ");
                 Console.WriteLine("---------------------------------------------\n");
                 var attendanceQuery = (from sb in sbDataList orderby sb.Attendance descending select sb).ToList<SuperBowl>().Take(5);
-                attendanceQuery.ToList<SuperBowl>().ForEach(x => Console.WriteLine(String.Format("{0:n0}", x.Attendance))); 
+                attendanceQuery.ToList<SuperBowl>().ForEach(x => Console.WriteLine($"1. The date the team won: {x.Date}\n2. The winning team: {x.winningTeam}\n3. The losing team: {x.losingTeam}\n" +
+                                                                                   $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
                 Console.WriteLine("\n");
 
                 //Below outputs players that won MVP for than once as well as their team and the team they beat
@@ -141,9 +142,9 @@ namespace Project_Two
             }
             public string printWinner()
             {
-                return String.Format($"{winningTeam} won the Superbowl in {Date}. " +
-                    $"Their quarterback was {winningQB}. Their winning coach was {winningCoach}." +
-                    $"The MVP was {MVP}. The point difference was {winningPoints - losingPoints}.\n");
+                return String.Format($"1. Winning Team: {winningTeam}\n2. Date: {Date}\n" +
+                    $"3. The winning quarterback: {winningQB}\n4. Their winning coach was {winningCoach}\n" +
+                    $"5. The MVP: {MVP}\n6. The point difference: {winningPoints - losingPoints}\n");
                 
             }
 
