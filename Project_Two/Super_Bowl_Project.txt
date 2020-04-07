@@ -388,6 +388,7 @@
 4. The city: Pasadena
 5. The state: California
 6. The stadium: Rose Bowl
+7. The attedance: 103985
 
 1. The date the team won: 30-Jan-83
 2. The winning team: Washington Redskins
@@ -395,6 +396,7 @@
 4. The city: Pasadena
 5. The state: California
 6. The stadium: Rose Bowl
+7. The attedance: 103667
 
 1. The date the team won: 9-Jan-77
 2. The winning team: Oakland Raiders
@@ -402,6 +404,7 @@
 4. The city: Pasadena
 5. The state: California
 6. The stadium: Rose Bowl
+7. The attedance: 103438
 
 1. The date the team won: 6-Feb-11
 2. The winning team: Green Bay Packers
@@ -409,6 +412,7 @@
 4. The city: Arlington
 5. The state: Texas
 6. The stadium: Cowboys Stadium
+7. The attedance: 103219
 
 1. The date the team won: 25-Jan-87
 2. The winning team: New York Giants
@@ -416,11 +420,92 @@
 4. The city: Pasadena
 5. The state: California
 6. The stadium: Rose Bowl
+7. The attedance: 101063
 
     State That Hosted The Most Superbowls     
 ---------------------------------------------
 
-1. Florida hosted 16 superbowls
+Florida hosted the most superbowls. They hosted 16 superbowls.
+
+1. City: Miami
+2. State: Florida
+3. Stadium: Orange Bowl
+4. Date: 14-Jan-68
+
+1. City: Miami
+2. State: Florida
+3. Stadium: Orange Bowl
+4. Date: 12-Jan-69
+
+1. City: Miami
+2. State: Florida
+3. Stadium: Orange Bowl
+4. Date: 17-Jan-71
+
+1. City: Miami
+2. State: Florida
+3. Stadium: Orange Bowl
+4. Date: 18-Jan-76
+
+1. City: Miami
+2. State: Florida
+3. Stadium: Orange Bowl
+4. Date: 21-Jan-79
+
+1. City: Tampa
+2. State: Florida
+3. Stadium: Tampa Stadium
+4. Date: 22-Jan-84
+
+1. City: Miami Gardens
+2. State: Florida
+3. Stadium: Joe Robbie Stadium
+4. Date: 22-Jan-89
+
+1. City: Tampa
+2. State: Florida
+3. Stadium: Tampa Stadium
+4. Date: 27-Jan-91
+
+1. City: Miami Gardens
+2. State: Florida
+3. Stadium: Joe Robbie Stadium
+4. Date: 29-Jan-95
+
+1. City: Miami Gardens
+2. State: Florida
+3. Stadium: Pro Player Stadium
+4. Date: 31-Jan-99
+
+1. City: Tampa
+2. State: Florida
+3. Stadium: Raymond James Stadium
+4. Date: 28-Jan-01
+
+1. City: Jacksonville
+2. State: Florida
+3. Stadium: Alltel Stadium
+4. Date: 6-Feb-05
+
+1. City: Miami Gardens
+2. State: Florida
+3. Stadium: Dolphin Stadium
+4. Date: 4-Feb-07
+
+1. City: Tampa
+2. State: Florida
+3. Stadium: Raymond James Stadium
+4. Date: 1-Feb-09
+
+1. City: Miami Gardens
+2. State: Florida
+3. Stadium: Sun Life Stadium
+4. Date: 7-Feb-10
+
+1. City: Miami Gardens
+2. State: Florida
+3. Stadium: Hard Rock Stadium
+4. Date: 2-Feb-20
 
 List of Players That Won Mvp More Than 1 Time
 ---------------------------------------------

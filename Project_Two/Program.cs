@@ -66,6 +66,7 @@ namespace Project_Two
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
+                //invoking the print winner function in a foreach
                 foreach (SuperBowl sb in sbDataList)
                 {
                     Console.WriteLine(sb.printWinner());
@@ -73,7 +74,7 @@ namespace Project_Two
 
                 foreach (SuperBowl sb in sbDataList)
                 {
-                    outfile.WriteLine(sb.printWinner());
+                    outfile.WriteLine(sb.printWinner()); 
                 }
 
                 //Below outputs the list of the top attended superbowl counts
@@ -87,10 +88,10 @@ namespace Project_Two
                 //For each element in the attendance query write the date, winning team, losing team, city, state, and stadium
                 //This code was influenced off of LeAnn Simonson and Sarah Fox
                 attendanceQuery.ToList<SuperBowl>().ForEach(x => Console.WriteLine($"1. The date the team won: {x.Date}\n2. The winning team: {x.winningTeam}\n3. The losing team: {x.losingTeam}\n" +
-                                                                                   $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
+                                                                                   $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n7. The attendance: {x.Attendance}\n"));
 
                 attendanceQuery.ToList<SuperBowl>().ForEach(x => outfile.WriteLine($"1. The date the team won: {x.Date}\n2. The winning team: {x.winningTeam}\n3. The losing team: {x.losingTeam}\n" +
-                                                                   $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
+                                                                                   $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n7. The attedance: {x.Attendance}\n"));
 
                 //Below outputs the state that hosted the most superbowls
                 //This section and the MVP section contain adapted code originally from LeAnn Simonson
@@ -111,10 +112,21 @@ namespace Project_Two
 
                 foreach (var sb in hostCount) //iterates through the list (even though it's just one element)
                 {
-                Console.WriteLine($"1. {sb.Key} hosted {sb.Count()} superbowls\n"); //writes the state and count to the terminal
-                outfile.WriteLine($"1. {sb.Key} hosted {sb.Count()} superbowls\n"); //writes the state and count to the file
+                Console.WriteLine($"{sb.Key} hosted the most superbowls. They hosted {sb.Count()} superbowls.\n"); //writes the state and count to the terminal
+                outfile.WriteLine($"{sb.Key} hosted the most superbowls. They hosted {sb.Count()} superbowls.\n"); //writes the state and count to the file
+                    foreach (var info in sb) //iterates through the info attached to the sb element and outputs the city, state, stadium, and date
+                    {
+                        Console.WriteLine($"1. City: {info.City}"); //using methods to pull data from a superbowl
+                        outfile.WriteLine($"1. City: {info.City}");
+                        Console.WriteLine($"2. State: {info.State}");
+                        outfile.WriteLine($"2. State: {info.State}");
+                        Console.WriteLine($"3. Stadium: {info.Stadium}");
+                        outfile.WriteLine($"3. Stadium: {info.Stadium}");
+                        Console.WriteLine($"4. Date: {info.Date}\n");
+                        outfile.WriteLine($"4. Date: {info.Date}\n");
+                    }
                 }
-                
+
                 //Below outputs players that won MVP for than once as well as their team and the team they beat
                 Console.WriteLine("List of Players That Won Mvp More Than 1 Time");
                 outfile.WriteLine("List of Players That Won Mvp More Than 1 Time");
@@ -129,9 +141,9 @@ namespace Project_Two
 
                 foreach (var sb in MVPCount)
                 {
-                    Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times\n");
+                    Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times\n"); //writes the MVP and amount of times they were MVP
                     outfile.WriteLine($"{sb.Key} won MVP {sb.Count()} times\n");
-                    foreach (var info in sb)
+                    foreach (var info in sb) //iterates through the info attached to the sb element(MVP) and outputs the winning team, team they beat, and the date the superbowl took place.
                     {
                         Console.WriteLine($"1. Their winning team: {info.winningTeam}"); //using methods to pull data from a superbowl
                         outfile.WriteLine($"1. Their winning team: {info.winningTeam}");
