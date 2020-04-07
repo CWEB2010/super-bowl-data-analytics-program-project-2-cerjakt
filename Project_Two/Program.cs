@@ -166,42 +166,79 @@ namespace Project_Two
                 //count of the first element in nestedQuery (the coach that lost the most superbowls).
                 var highestLossCount = (from sb in sbDataList group sb by sb.losingCoach into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
 
-                //defining a losing coach query that is designed to take the coach that lost the most by using a condition 
-                //that was found in the nested query. From there, the coach that lost the most is selected and added to the query.
-                var losingCoachQuery = (from sb in sbDataList group sb by sb.losingCoach into losingCoachGroup where losingCoachGroup.Count() == highestLossCount select losingCoachGroup).Take(1); 
+                //defining a losing coach query that is designed to take the coach that lost the most by using a condition that
+                //was found in the nested query. From there, the coaches that lost the most are selected and added to an array
+                var losingCoachQuery = (from sb in sbDataList group sb by sb.losingCoach into losingCoachGroup where losingCoachGroup.Count() == highestLossCount select losingCoachGroup.Key).ToArray();
 
-                foreach (var sb in losingCoachQuery) //iterates through the list (even though it's just one element)
+                for (var x = 0; x < losingCoachQuery.Length; x++) 
                 {
-                    Console.WriteLine($"{sb.Key} lost most superbowls. They lost {sb.Count()} superbowls.\n"); //writes the coach that lost the most and count to the terminal
-                    outfile.WriteLine($"{sb.Key} lost most superbowls. They lost {sb.Count()} superbowls.\n"); //writes the coach that lost the most and count to the file
+                    Console.WriteLine($"- {losingCoachQuery[x]} lost the most superbowls\n");
+                    outfile.WriteLine($"- {losingCoachQuery[x]} lost the most superbowls\n");
                 }
                 Console.WriteLine("\n");
                 outfile.WriteLine("\n");
 
                 //Below outputs the coach that won the most superbowls
-                Console.WriteLine("     Coach That Won The Most Superbowls  ");
-                outfile.WriteLine("     Coach That Won The Most Superbowls  ");
+                //////
+                Console.WriteLine("      Coach That Won The Most Superbowls  ");
+                outfile.WriteLine("      Coach That Won The Most Superbowls  ");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
                 //The same process as the most losses coach section is used for this query manipulation.
                 var highestWinCount = (from sb in sbDataList group sb by sb.winningCoach into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
 
-                var winningCoachQuery = (from sb in sbDataList group sb by sb.winningCoach into winningCoachGroup where winningCoachGroup.Count() == highestWinCount select winningCoachGroup).Take(1);
+                var winningCoachQuery = (from sb in sbDataList group sb by sb.winningCoach into winningCoachGroup where winningCoachGroup.Count() == highestWinCount select winningCoachGroup.Key).ToArray();
 
-                foreach (var sb in winningCoachQuery) //iterates through the list (even though it's just one element)
+                for (var x = 0; x < winningCoachQuery.Length; x++) 
                 {
-                    Console.WriteLine($"{sb.Key} won most superbowls. They won {sb.Count()} superbowls.\n"); 
-                    outfile.WriteLine($"{sb.Key} won most superbowls. They won {sb.Count()} superbowls.\n"); 
+                    Console.WriteLine($"- {winningCoachQuery[x]} won the most superbowls\n");
+                    outfile.WriteLine($"- {winningCoachQuery[x]} won the most superbowls\n");
                 }
                 Console.WriteLine("\n");
                 outfile.WriteLine("\n");
 
                 //Below outputs the team that won the most superbowls
+                //////
+                Console.WriteLine("     Team That Won The Most Superbowls  ");
+                outfile.WriteLine("     Team That Won The Most Superbowls  ");
+                Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
 
+                //The same process as the most losses coach section is used for this query manipulation.
+                var teamHighestWinCount = (from sb in sbDataList group sb by sb.winningTeam into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+
+                var winningTeamQuery = (from sb in sbDataList group sb by sb.winningTeam into winningTeamGroup where winningTeamGroup.Count() == teamHighestWinCount select winningTeamGroup.Key).ToArray();
+
+                for (var x = 0; x < winningTeamQuery.Length; x++)
+                {
+                    Console.WriteLine($"- {winningTeamQuery[x]} won the most superbowls\n");
+                    outfile.WriteLine($"- {winningTeamQuery[x]} won the most superbowls\n");
+                }
+                Console.WriteLine("\n");
+                outfile.WriteLine("\n");
+
+                //Below outputs the team that lost the most superbowls
+                //////
+                Console.WriteLine("     Team That Lost The Most Superbowls  ");
+                outfile.WriteLine("     Team That Lost The Most Superbowls  ");
+                Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
+
+                //The same process as the most losses coach section is used for this query manipulation.
+                var teamHighestLossCount = (from sb in sbDataList group sb by sb.losingTeam into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+
+                var losingTeamQuery = (from sb in sbDataList group sb by sb.losingTeam into losingTeamGroup where losingTeamGroup.Count() == teamHighestLossCount select losingTeamGroup.Key).ToArray();
+
+                for (var x = 0; x < losingTeamQuery.Length; x++)
+                {
+                    Console.WriteLine($"- {losingTeamQuery[x]} lost the most superbowls\n");
+                    outfile.WriteLine($"- {losingTeamQuery[x]} lost the most superbowls\n");
+                }
+                Console.WriteLine("\n");
+                outfile.WriteLine("\n");
 
                 //End message and file closing
-                newfile.Close();
                 outfile.Close(); //closes the outfile (this fixes data stream issues as well)
                 Console.WriteLine("The data displayed above has been written to the TXT file.");
             } //end of try
