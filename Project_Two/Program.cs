@@ -238,6 +238,34 @@ namespace Project_Two
                 Console.WriteLine("\n");
                 outfile.WriteLine("\n");
 
+                //Below outputs the superbowl that had the greatest point difference
+                Console.WriteLine("     Superbowl with Greatest Point Difference  ");
+                outfile.WriteLine("     Superbowl with Greatest Point Difference  ");
+                Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
+
+                //declaring an empty list to place the point differences
+                var pointDifferences = new List<int>();
+
+                //for each superbowl element in the superbowl data list, add the point differences associated with the superbowl to the list
+                foreach (var sb in sbDataList)
+                {
+                    pointDifferences.Add(sb.pointDifference());
+                }
+                
+                //delcaring a greatest point difference variable and making it equal to the max point difference in the point differences list
+                var greatestPointDifference = pointDifferences.Max();
+
+                //for each superbowl element in the superbowl data list, write to the file and 
+                //console only if the point difference is equal to the greatest point difference
+                foreach (var sb in sbDataList)
+                {
+                    if (sb.pointDifference() == greatestPointDifference)
+                    {
+                        Console.WriteLine($"Superbowl {sb.SB} has the greatest point difference of {sb.pointDifference()}");
+                    }
+                }
+
                 //End message and file closing
                 outfile.Close(); //closes the outfile (this fixes data stream issues as well)
                 Console.WriteLine("The data displayed above has been written to the TXT file.");
