@@ -1,4 +1,14 @@
-﻿using System;
+﻿//////////////////////////////////////////////////
+//Name: Jake Cermak
+//Date: 4/7/2020
+//Course: CWEB2010
+//Program: Project 2 - Superbowl Data Manipulation
+//Program Description: This program reads from a
+//CSV file, populates the data into a list by
+//instantiating superbowl objects, manipulates
+//the data, and writes it to a TXT file.
+//////////////////////////////////////////////////
+using System;
 using System.IO;
 using System.Collections.Generic;
 using System.Linq;
