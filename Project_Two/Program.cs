@@ -84,6 +84,8 @@ namespace Project_Two
 
                 var attendanceQuery = (from sb in sbDataList orderby sb.Attendance descending select sb).ToList<SuperBowl>().Take(5); //selects 5 superbowls by top attendance from the superbowl data list and pust them into an attendance query list
 
+                //For each element in the attendance query write the date, winning team, losing team, city, state, and stadium
+                //This code was influenced off of LeAnn Simonson and Sarah Fox
                 attendanceQuery.ToList<SuperBowl>().ForEach(x => Console.WriteLine($"1. The date the team won: {x.Date}\n2. The winning team: {x.winningTeam}\n3. The losing team: {x.losingTeam}\n" +
                                                                                    $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
 
@@ -91,6 +93,7 @@ namespace Project_Two
                                                                    $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
 
                 //Below outputs the state that hosted the most superbowls
+                //This section and the MVP section contain adapted code originally from LeAnn Simonson
                 Console.WriteLine("    State That Hosted The Most Superbowls     ");
                 outfile.WriteLine("    State That Hosted The Most Superbowls     ");
                 Console.WriteLine("---------------------------------------------\n");
