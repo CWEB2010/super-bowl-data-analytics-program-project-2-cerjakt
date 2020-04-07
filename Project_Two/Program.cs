@@ -17,7 +17,6 @@ namespace Project_Two
             string[] sbData;
             string csvPATH = "";
             string txtPATH = "";
-            string primer;
 
             //Program Introduction
             Console.WriteLine("Welcome to the Superbowl CSV file reader.");
@@ -40,8 +39,8 @@ namespace Project_Two
             try
             {
                 //declaring a file stream to write to the text file with the superbowl data
-                FileStream newFile = new FileStream(txtPATH, FileMode.Create, FileAccess.Write);
-                StreamWriter outfile = new StreamWriter(newFile);
+                FileStream newfile = new FileStream(txtPATH, FileMode.Create, FileAccess.Write);
+                StreamWriter outfile = new StreamWriter(newfile);
 
                 input = new FileStream(csvPATH, FileMode.Open, FileAccess.Read);
                 read = new StreamReader(input);
@@ -100,14 +99,14 @@ namespace Project_Two
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
-                var queryCount = (from sb in sbDataList //defining a query count variable that is used to make a descending list
+                var hostQueryCount = (from sb in sbDataList //defining a query count variable that is used to make a descending list
                                   group sb by sb.State into nestedQuery //creates a group of state data and puts it into a nested query
-                                  orderby nestedQuery.Count() descending //orders the list from least amount of states to most
+                                  orderby nestedQuery.Count() descending //orders the list 
                                   select nestedQuery).First().Count(); //takes the count of the first element in nestedQuery (the state that hosted the most superbowls)
 
                 var hostCount = (from sb in sbDataList //defining a host count variable that considers each superbowl(sb) in the superbowl data list
                                 group sb by sb.State into hostGroup //creates a group of state data and puts it into host group
-                                where hostGroup.Count() == queryCount //adds a condition to the list where the only element it contains can be equal to the most hosted count
+                                where hostGroup.Count() == hostQueryCount //adds a condition to the list where the only element it contains can be equal to the most hosted count
                                 select hostGroup).Take(1); //takes the one element in the list
 
                 foreach (var sb in hostCount) //iterates through the list (even though it's just one element)
@@ -136,7 +135,7 @@ namespace Project_Two
                 var MVPCount = from sb in sbDataList //defining an MVPCount variable that considers each superbowl(sb) in the superbowl data list
                                group sb by sb.MVP into MVPGroup //creates a group of MVP data to be counted
                                where MVPGroup.Count() > 1 //only adds the MVP to the group if the player was MVP more than once
-                               orderby MVPGroup.Key //orders the list from least amount of MVPs to most
+                               orderby MVPGroup.Key //orders the list 
                                select MVPGroup; //returns the ordered list of MVPs in a list format
 
                 foreach (var sb in MVPCount)
@@ -155,9 +154,56 @@ namespace Project_Two
                     Console.WriteLine("\n");
                     outfile.WriteLine("\n");
                 }
-                outfile.Close();
-                Console.WriteLine("The data displayed above has been written to the TXT file.\nEnter in any key to quit.");
-                primer = Console.ReadLine();
+
+                //Below outputs the coach that lost the most superbowls
+                Console.WriteLine("     Coach That Lost The Most Superbowls  ");
+                outfile.WriteLine("     Coach That Lost The Most Superbowls  ");
+                Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
+
+                //Defining a query count variable that is used to make a descending list to determine highest loss count.
+                //It creates a group of losing coach data and puts it into a nested query, orders the list, and takes the 
+                //count of the first element in nestedQuery (the coach that lost the most superbowls).
+                var highestLossCount = (from sb in sbDataList group sb by sb.losingCoach into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+
+                //defining a losing coach query that is designed to take the coach that lost the most by using a condition 
+                //that was found in the nested query. From there, the coach that lost the most is selected and added to the query.
+                var losingCoachQuery = (from sb in sbDataList group sb by sb.losingCoach into losingCoachGroup where losingCoachGroup.Count() == highestLossCount select losingCoachGroup).Take(1); 
+
+                foreach (var sb in losingCoachQuery) //iterates through the list (even though it's just one element)
+                {
+                    Console.WriteLine($"{sb.Key} lost most superbowls. They lost {sb.Count()} superbowls.\n"); //writes the coach that lost the most and count to the terminal
+                    outfile.WriteLine($"{sb.Key} lost most superbowls. They lost {sb.Count()} superbowls.\n"); //writes the coach that lost the most and count to the file
+                }
+                Console.WriteLine("\n");
+                outfile.WriteLine("\n");
+
+                //Below outputs the coach that won the most superbowls
+                Console.WriteLine("     Coach That Won The Most Superbowls  ");
+                outfile.WriteLine("     Coach That Won The Most Superbowls  ");
+                Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
+
+                //The same process as the most losses coach section is used for this query manipulation.
+                var highestWinCount = (from sb in sbDataList group sb by sb.winningCoach into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+
+                var winningCoachQuery = (from sb in sbDataList group sb by sb.winningCoach into winningCoachGroup where winningCoachGroup.Count() == highestWinCount select winningCoachGroup).Take(1);
+
+                foreach (var sb in winningCoachQuery) //iterates through the list (even though it's just one element)
+                {
+                    Console.WriteLine($"{sb.Key} won most superbowls. They won {sb.Count()} superbowls.\n"); 
+                    outfile.WriteLine($"{sb.Key} won most superbowls. They won {sb.Count()} superbowls.\n"); 
+                }
+                Console.WriteLine("\n");
+                outfile.WriteLine("\n");
+
+                //Below outputs the team that won the most superbowls
+
+
+                //End message and file closing
+                newfile.Close();
+                outfile.Close(); //closes the outfile (this fixes data stream issues as well)
+                Console.WriteLine("The data displayed above has been written to the TXT file.");
             } //end of try
 
             catch (Exception e)
@@ -203,6 +249,10 @@ namespace Project_Two
                 this.Stadium = sbData[12];
                 this.City = sbData[13];
                 this.State = sbData[14];
+            }
+            public int pointDifference() //simple point difference function
+            {
+                return (winningPoints - losingPoints);
             }
             public string printWinner() //modularation of the print winners section
             {
