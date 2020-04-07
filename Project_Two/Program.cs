@@ -17,23 +17,25 @@ namespace Project_Two
             string[] sbData;
             string csvPATH = "";
             string txtPATH = "";
+            string primer;
 
             //Program Introduction
-            Console.WriteLine("Welcome to the Superbowl CSV file reader/");
-            Console.WriteLine("This Program will read the data from the CSV file and write it to a new file\n");
-            Console.WriteLine("Where do you want to read the csv file from?\n");
-            Console.WriteLine("for example:\nC:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.csv\n");
+            Console.WriteLine("Welcome to the Superbowl CSV file reader.");
+            Console.WriteLine("This Program will read the data from the CSV file and write it to a TXT file.\n");
 
             //User defines the PATH to the csv
+            Console.WriteLine("Where do you want to read the csv file from?\n");
+            Console.WriteLine("for example:\nC:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.csv\n");
             Console.WriteLine("Input the PATH to the CSV File:");
             csvPATH = @Console.ReadLine();
-
-            Console.WriteLine("Where do you want to read the csv file from?\n");
-            Console.WriteLine("for example:\nC:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.txt\n");
+            Console.Clear();
 
             //User defines the PATH to the txt
+            Console.WriteLine("Where do you want to read the csv file from?\n");
+            Console.WriteLine("for example:\nC:\\Users\\Jake\\Documents\\College\\SENG Semester 2\\Advanced Programming\\Projects\\Project 2\\Project_Two\\Super_Bowl_Project.txt\n");
             Console.WriteLine("Input the PATH to the TXT File:");
             txtPATH = @Console.ReadLine();
+            Console.Clear();
 
             try
             {
@@ -60,23 +62,39 @@ namespace Project_Two
 
                 //Below outputs the list of the winning teams
                 Console.WriteLine("          List of Winning Teams         ");
+                outfile.WriteLine("          List of Winning Teams         ");
                 Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
 
                 foreach (SuperBowl sb in sbDataList)
                 {
                     Console.WriteLine(sb.printWinner());
                 }
 
+                foreach (SuperBowl sb in sbDataList)
+                {
+                    outfile.WriteLine(sb.printWinner());
+                }
+
                 //Below outputs the list of the top attended superbowl counts
                 Console.WriteLine("          Top 5 Attended Superbowls         ");
+                outfile.WriteLine("          Top 5 Attended Superbowls         ");
                 Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
+
                 var attendanceQuery = (from sb in sbDataList orderby sb.Attendance descending select sb).ToList<SuperBowl>().Take(5); //selects 5 superbowls by top attendance from the superbowl data list and pust them into an attendance query list
+
                 attendanceQuery.ToList<SuperBowl>().ForEach(x => Console.WriteLine($"1. The date the team won: {x.Date}\n2. The winning team: {x.winningTeam}\n3. The losing team: {x.losingTeam}\n" +
                                                                                    $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
 
+                attendanceQuery.ToList<SuperBowl>().ForEach(x => outfile.WriteLine($"1. The date the team won: {x.Date}\n2. The winning team: {x.winningTeam}\n3. The losing team: {x.losingTeam}\n" +
+                                                                   $"4. The city: {x.City}\n5. The state: {x.State}\n6. The stadium: {x.Stadium}\n"));
+
                 //Below outputs the state that hosted the most superbowls
                 Console.WriteLine("    State That Hosted The Most Superbowls     ");
+                outfile.WriteLine("    State That Hosted The Most Superbowls     ");
                 Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
 
                 var queryCount = (from sb in sbDataList //defining a query count variable that is used to make a descending list
                                   group sb by sb.State into nestedQuery //creates a group of state data and puts it into a nested query
@@ -91,11 +109,14 @@ namespace Project_Two
                 foreach (var sb in hostCount) //iterates through the list (even though it's just one element)
                 {
                 Console.WriteLine($"1. {sb.Key} hosted {sb.Count()} superbowls\n"); //writes the state and count to the terminal
+                outfile.WriteLine($"1. {sb.Key} hosted {sb.Count()} superbowls\n"); //writes the state and count to the file
                 }
                 
                 //Below outputs players that won MVP for than once as well as their team and the team they beat
                 Console.WriteLine("List of Players That Won Mvp More Than 1 Time");
+                outfile.WriteLine("List of Players That Won Mvp More Than 1 Time");
                 Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
 
                 var MVPCount = from sb in sbDataList //defining an MVPCount variable that considers each superbowl(sb) in the superbowl data list
                                group sb by sb.MVP into MVPGroup //creates a group of MVP data to be counted
@@ -106,16 +127,22 @@ namespace Project_Two
                 foreach (var sb in MVPCount)
                 {
                     Console.WriteLine($"{sb.Key} won MVP {sb.Count()} times\n");
-                    Console.WriteLine("             Their winning teams           ");
-                    Console.WriteLine("---------------------------------------------");
+                    outfile.WriteLine($"{sb.Key} won MVP {sb.Count()} times\n");
                     foreach (var info in sb)
                     {
-                        Console.WriteLine($"Their winning team: {info.winningTeam}"); //using methods to pull data from a superbowl
-                        Console.WriteLine($"The team they beat: {info.losingTeam}");
-                        Console.WriteLine($"Superbowl took place: {info.Date}\n");
+                        Console.WriteLine($"1. Their winning team: {info.winningTeam}"); //using methods to pull data from a superbowl
+                        outfile.WriteLine($"1. Their winning team: {info.winningTeam}");
+                        Console.WriteLine($"2. The team they beat: {info.losingTeam}");
+                        outfile.WriteLine($"2. The team they beat: {info.losingTeam}");
+                        Console.WriteLine($"3. Superbowl took place: {info.Date}\n");
+                        outfile.WriteLine($"3. Superbowl took place: {info.Date}\n");
                     }
                     Console.WriteLine("\n");
+                    outfile.WriteLine("\n");
                 }
+                outfile.Close();
+                Console.WriteLine("The data displayed above has been written to the TXT file.\nEnter in any key to quit.");
+                primer = Console.ReadLine();
             } //end of try
 
             catch (Exception e)
@@ -165,8 +192,8 @@ namespace Project_Two
             public string printWinner() //modularation of the print winners section
             {
                 return String.Format($"1. Winning Team: {winningTeam}\n2. Date: {Date}\n" +
-                    $"3. The winning quarterback: {winningQB}\n4. Their winning coach was {winningCoach}\n" +
-                    $"5. The MVP: {MVP}\n6. The point difference: {winningPoints - losingPoints}\n");
+                    $"3. Winning Quarterback: {winningQB}\n4. Winning Coach: {winningCoach}\n" +
+                    $"5. MVP: {MVP}\n6. Point Difference: {winningPoints - losingPoints}\n");
                 
             }
 

@@ -1,0 +1,499 @@
+          List of Winning Teams         
+---------------------------------------------
+
+1. Winning Team: Green Bay Packers
+2. Date: 15-Jan-67
+3. Winning Quarterback: Bart Starr
+4. Winning Coach: Vince Lombardi
+5. MVP: Bart Starr
+6. Point Difference: 25
+
+1. Winning Team: Green Bay Packers
+2. Date: 14-Jan-68
+3. Winning Quarterback: Bart Starr
+4. Winning Coach: Vince Lombardi
+5. MVP: Bart Starr
+6. Point Difference: 19
+
+1. Winning Team: New York Jets
+2. Date: 12-Jan-69
+3. Winning Quarterback: Joe Namath
+4. Winning Coach: Weeb Ewbank
+5. MVP: Joe Namath
+6. Point Difference: 9
+
+1. Winning Team: Kansas City Chiefs
+2. Date: 11-Jan-70
+3. Winning Quarterback: Len Dawson  Mike Livingston
+4. Winning Coach: Hank Stram
+5. MVP: Len Dawson
+6. Point Difference: 16
+
+1. Winning Team: Baltimore Colts
+2. Date: 17-Jan-71
+3. Winning Quarterback: Earl Morrall  Johnny Unitas
+4. Winning Coach: Don McCafferty
+5. MVP: Chuck Howley
+6. Point Difference: 3
+
+1. Winning Team: Dallas Cowboys
+2. Date: 16-Jan-72
+3. Winning Quarterback: Roger Staubach
+4. Winning Coach: Tom Landry
+5. MVP: Roger Staubach
+6. Point Difference: 21
+
+1. Winning Team: Miami Dolphins
+2. Date: 14-Jan-73
+3. Winning Quarterback: Bob Griese
+4. Winning Coach: Don Shula
+5. MVP: Jake Scott
+6. Point Difference: 7
+
+1. Winning Team: Miami Dolphins
+2. Date: 13-Jan-74
+3. Winning Quarterback: Bob Griese
+4. Winning Coach: Don Shula
+5. MVP: Larry Csonka
+6. Point Difference: 17
+
+1. Winning Team: Pittsburgh Steelers
+2. Date: 12-Jan-75
+3. Winning Quarterback: Terry Bradshaw
+4. Winning Coach: Chuck Noll 
+5. MVP: Franco Harris
+6. Point Difference: 10
+
+1. Winning Team: Pittsburgh Steelers
+2. Date: 18-Jan-76
+3. Winning Quarterback: Terry Bradshaw
+4. Winning Coach: Chuck Noll 
+5. MVP: Lynn Swann
+6. Point Difference: 4
+
+1. Winning Team: Oakland Raiders
+2. Date: 9-Jan-77
+3. Winning Quarterback: Kenny Stabler
+4. Winning Coach: John Madden
+5. MVP: Fred Biletnikoff
+6. Point Difference: 18
+
+1. Winning Team: Dallas Cowboys
+2. Date: 15-Jan-78
+3. Winning Quarterback: Roger Staubach
+4. Winning Coach: Tom Landry
+5. MVP: Harvey Martin Randy White
+6. Point Difference: 17
+
+1. Winning Team: Pittsburgh Steelers
+2. Date: 21-Jan-79
+3. Winning Quarterback: Terry Bradshaw
+4. Winning Coach: Chuck Noll
+5. MVP: Terry Bradshaw
+6. Point Difference: 4
+
+1. Winning Team: Pittsburgh Steelers
+2. Date: 20-Jan-80
+3. Winning Quarterback: Terry Bradshaw
+4. Winning Coach: Chuck Noll
+5. MVP: Terry Bradshaw
+6. Point Difference: 12
+
+1. Winning Team: Oakland Raiders
+2. Date: 25-Jan-81
+3. Winning Quarterback: Jim Plunkett
+4. Winning Coach: Tom Flores
+5. MVP: Jim Plunkett
+6. Point Difference: 17
+
+1. Winning Team: San Francisco 49ers
+2. Date: 24-Jan-82
+3. Winning Quarterback: Joe Montana
+4. Winning Coach: Bill Walsh
+5. MVP: Joe Montana
+6. Point Difference: 5
+
+1. Winning Team: Washington Redskins
+2. Date: 30-Jan-83
+3. Winning Quarterback: Joe Theismann
+4. Winning Coach: Joe Gibbs
+5. MVP: John Riggins
+6. Point Difference: 10
+
+1. Winning Team: Los Angeles Raiders
+2. Date: 22-Jan-84
+3. Winning Quarterback: Jim Plunkett
+4. Winning Coach: Tom Flores
+5. MVP: Marcus Allen
+6. Point Difference: 29
+
+1. Winning Team: San Francisco 49ers
+2. Date: 20-Jan-85
+3. Winning Quarterback: Joe Montano
+4. Winning Coach: Bill Walsh
+5. MVP: Joe Montana
+6. Point Difference: 22
+
+1. Winning Team: Chicago Bears
+2. Date: 26-Jan-86
+3. Winning Quarterback: Jim McMahon
+4. Winning Coach: Mike Ditka
+5. MVP: Richard Dent
+6. Point Difference: 36
+
+1. Winning Team: New York Giants
+2. Date: 25-Jan-87
+3. Winning Quarterback: Phil Simms
+4. Winning Coach: Bill Parcells
+5. MVP: Phil Simms
+6. Point Difference: 19
+
+1. Winning Team: Washington Redskins
+2. Date: 31-Jan-88
+3. Winning Quarterback: Doug Williams
+4. Winning Coach: Joe Gibbs
+5. MVP: Doug Williams
+6. Point Difference: 32
+
+1. Winning Team: San Francisco 49ers
+2. Date: 22-Jan-89
+3. Winning Quarterback: Joe Montana
+4. Winning Coach: Bill Walsh
+5. MVP: Jerry Rice
+6. Point Difference: 4
+
+1. Winning Team: San Francisco 49ers
+2. Date: 28-Jan-90
+3. Winning Quarterback: Joe Montana
+4. Winning Coach: George Seifert
+5. MVP: Joe Montana
+6. Point Difference: 45
+
+1. Winning Team: New York Giants
+2. Date: 27-Jan-91
+3. Winning Quarterback: Jeff Hostetler
+4. Winning Coach: Bill Parcells
+5. MVP: Ottis Anderson
+6. Point Difference: 1
+
+1. Winning Team: Washington Redskins
+2. Date: 26-Jan-92
+3. Winning Quarterback: Mark Rypien
+4. Winning Coach: Joe Gibbs
+5. MVP: Mark Rypien
+6. Point Difference: 13
+
+1. Winning Team: Dallas Cowboys
+2. Date: 31-Jan-93
+3. Winning Quarterback: Troy Aikman
+4. Winning Coach: Jimmy Johnson
+5. MVP: Troy Aikman
+6. Point Difference: 35
+
+1. Winning Team: Dallas Cowboys
+2. Date: 30-Jan-94
+3. Winning Quarterback: Troy Aikman
+4. Winning Coach: Jimmy Johnson
+5. MVP: Emmitt Smith
+6. Point Difference: 17
+
+1. Winning Team: San Francisco 49ers
+2. Date: 29-Jan-95
+3. Winning Quarterback: Steve Young
+4. Winning Coach: George Seifert
+5. MVP: Steve Young
+6. Point Difference: 23
+
+1. Winning Team: Dallas Cowboys
+2. Date: 28-Jan-96
+3. Winning Quarterback: Troy Aikman
+4. Winning Coach: Barry Switzer
+5. MVP: Larry Brown
+6. Point Difference: 10
+
+1. Winning Team: Green Bay Packers
+2. Date: 26-Jan-97
+3. Winning Quarterback: Brett Favre
+4. Winning Coach: Mike Holmgren
+5. MVP: Desmond Howard
+6. Point Difference: 14
+
+1. Winning Team: Denver Broncos
+2. Date: 25-Jan-98
+3. Winning Quarterback: John Elway
+4. Winning Coach: Mike Shanahan
+5. MVP: Terrell Davis
+6. Point Difference: 7
+
+1. Winning Team: Denver Broncos
+2. Date: 31-Jan-99
+3. Winning Quarterback: John Elway
+4. Winning Coach: Mike Shanahan
+5. MVP: John Elway
+6. Point Difference: 15
+
+1. Winning Team: St. Louis Rams
+2. Date: 30-Jan-00
+3. Winning Quarterback: Kurt Warner
+4. Winning Coach: Dick Vermeil
+5. MVP: Kurt Warner
+6. Point Difference: 7
+
+1. Winning Team: Baltimore Ravens
+2. Date: 28-Jan-01
+3. Winning Quarterback: Trent Dilfer
+4. Winning Coach: Brian Billick
+5. MVP: Ray Lewis
+6. Point Difference: 27
+
+1. Winning Team: New England Patriots
+2. Date: 3-Feb-02
+3. Winning Quarterback: Tom Brady
+4. Winning Coach: Bill Belichick
+5. MVP: Tom Brady
+6. Point Difference: 3
+
+1. Winning Team: Tampa Bay Buccaneers
+2. Date: 26-Jan-03
+3. Winning Quarterback: Brad Johnson
+4. Winning Coach: Jon Gruden
+5. MVP: Dexter Jackson
+6. Point Difference: 27
+
+1. Winning Team: New England Patriots
+2. Date: 1-Feb-04
+3. Winning Quarterback: Tom Brady
+4. Winning Coach: Bill Belichick
+5. MVP: Tom Brady
+6. Point Difference: 3
+
+1. Winning Team: New England Patriots
+2. Date: 6-Feb-05
+3. Winning Quarterback: Tom Brady
+4. Winning Coach: Bill Belichick
+5. MVP: Deion Branch
+6. Point Difference: 3
+
+1. Winning Team: Pittsburgh Steelers
+2. Date: 5-Feb-06
+3. Winning Quarterback: Ben Roethlisberger
+4. Winning Coach: Bill Cowher
+5. MVP: Hines Ward
+6. Point Difference: 11
+
+1. Winning Team: Indianapolis Colts
+2. Date: 4-Feb-07
+3. Winning Quarterback: Peyton Manning
+4. Winning Coach: Tony Dungy
+5. MVP: Peyton Manning
+6. Point Difference: 12
+
+1. Winning Team: New York Giants
+2. Date: 3-Feb-08
+3. Winning Quarterback: Eli Manning
+4. Winning Coach: Tom Coughlin
+5. MVP: Eli Manning
+6. Point Difference: 3
+
+1. Winning Team: Pittsburgh Steelers
+2. Date: 1-Feb-09
+3. Winning Quarterback: Ben Roethlisberger
+4. Winning Coach: Mike Tomlin
+5. MVP: Santonio Holmes
+6. Point Difference: 4
+
+1. Winning Team: New Orleans Saints
+2. Date: 7-Feb-10
+3. Winning Quarterback: Drew Brees
+4. Winning Coach: Sean Payton
+5. MVP: Drew Brees
+6. Point Difference: 14
+
+1. Winning Team: Green Bay Packers
+2. Date: 6-Feb-11
+3. Winning Quarterback: Aaron Rodgers
+4. Winning Coach: Mike McCarthy
+5. MVP: Aaron Rodgers
+6. Point Difference: 6
+
+1. Winning Team: New York Giants
+2. Date: 5-Feb-12
+3. Winning Quarterback: Eli Manning
+4. Winning Coach: Tom Coughlin
+5. MVP: Eli Manning
+6. Point Difference: 4
+
+1. Winning Team: Baltimore Ravens
+2. Date: 3-Feb-13
+3. Winning Quarterback: Joe Flacco
+4. Winning Coach: John Harbaugh
+5. MVP: Joe Flacco
+6. Point Difference: 3
+
+1. Winning Team: Seattle Seahawks
+2. Date: 2-Feb-14
+3. Winning Quarterback: Russell Wilson
+4. Winning Coach: Pete Carroll
+5. MVP: Malcolm Smith
+6. Point Difference: 35
+
+1. Winning Team: New England Patriots
+2. Date: 1-Feb-15
+3. Winning Quarterback: Tom Brady
+4. Winning Coach: Bill Belichick
+5. MVP: Tom Brady
+6. Point Difference: 4
+
+1. Winning Team: Denver Broncos
+2. Date: 7-Feb-16
+3. Winning Quarterback: Peyton Manning
+4. Winning Coach: Gary Kubiak
+5. MVP: Von Miller
+6. Point Difference: 14
+
+1. Winning Team: New England Patriots
+2. Date: 5-Feb-17
+3. Winning Quarterback: Tom Brady
+4. Winning Coach: Bill Belichick
+5. MVP: Tom Brady
+6. Point Difference: 6
+
+1. Winning Team: Philadelphia Eagles
+2. Date: 4-Feb-18
+3. Winning Quarterback: Nick Foles
+4. Winning Coach: Doug Pederson
+5. MVP: Nick Foles
+6. Point Difference: 8
+
+1. Winning Team: New England Patriots
+2. Date: 3-Feb-19
+3. Winning Quarterback: Tom Brady
+4. Winning Coach: Bill Belichick
+5. MVP: Julian Edelman
+6. Point Difference: 10
+
+1. Winning Team: Kansas City Chiefs
+2. Date: 2-Feb-20
+3. Winning Quarterback: Patrick Mahomes
+4. Winning Coach: Andy Reid
+5. MVP: Patrick Mahomes
+6. Point Difference: 11
+
+          Top 5 Attended Superbowls         
+---------------------------------------------
+
+1. The date the team won: 20-Jan-80
+2. The winning team: Pittsburgh Steelers
+3. The losing team: Los Angeles Rams
+4. The city: Pasadena
+5. The state: California
+6. The stadium: Rose Bowl
+
+1. The date the team won: 30-Jan-83
+2. The winning team: Washington Redskins
+3. The losing team: Miami Dolphins
+4. The city: Pasadena
+5. The state: California
+6. The stadium: Rose Bowl
+
+1. The date the team won: 9-Jan-77
+2. The winning team: Oakland Raiders
+3. The losing team: Minnesota Vikings
+4. The city: Pasadena
+5. The state: California
+6. The stadium: Rose Bowl
+
+1. The date the team won: 6-Feb-11
+2. The winning team: Green Bay Packers
+3. The losing team: Pittsburgh Steelers
+4. The city: Arlington
+5. The state: Texas
+6. The stadium: Cowboys Stadium
+
+1. The date the team won: 25-Jan-87
+2. The winning team: New York Giants
+3. The losing team: Denver Broncos
+4. The city: Pasadena
+5. The state: California
+6. The stadium: Rose Bowl
+
+    State That Hosted The Most Superbowls     
+---------------------------------------------
+
+1. Florida hosted 16 superbowls
+
+List of Players That Won Mvp More Than 1 Time
+---------------------------------------------
+
+Bart Starr won MVP 2 times
+
+1. Their winning team: Green Bay Packers
+2. The team they beat: Kansas City Chiefs
+3. Superbowl took place: 15-Jan-67
+
+1. Their winning team: Green Bay Packers
+2. The team they beat: Oakland Raiders
+3. Superbowl took place: 14-Jan-68
+
+
+
+Eli Manning won MVP 2 times
+
+1. Their winning team: New York Giants
+2. The team they beat: New England Patriots
+3. Superbowl took place: 3-Feb-08
+
+1. Their winning team: New York Giants
+2. The team they beat: New England Patriots
+3. Superbowl took place: 5-Feb-12
+
+
+
+Joe Montana won MVP 3 times
+
+1. Their winning team: San Francisco 49ers
+2. The team they beat: Cincinnati Bengals
+3. Superbowl took place: 24-Jan-82
+
+1. Their winning team: San Francisco 49ers
+2. The team they beat: Miami Dolphins
+3. Superbowl took place: 20-Jan-85
+
+1. Their winning team: San Francisco 49ers
+2. The team they beat: Denver Broncos
+3. Superbowl took place: 28-Jan-90
+
+
+
+Terry Bradshaw won MVP 2 times
+
+1. Their winning team: Pittsburgh Steelers
+2. The team they beat: Dallas Cowboys
+3. Superbowl took place: 21-Jan-79
+
+1. Their winning team: Pittsburgh Steelers
+2. The team they beat: Los Angeles Rams
+3. Superbowl took place: 20-Jan-80
+
+
+
+Tom Brady won MVP 4 times
+
+1. Their winning team: New England Patriots
+2. The team they beat: St. Louis Rams
+3. Superbowl took place: 3-Feb-02
+
+1. Their winning team: New England Patriots
+2. The team they beat: Carolina Panthers
+3. Superbowl took place: 1-Feb-04
+
+1. Their winning team: New England Patriots
+2. The team they beat: Seattle Seahawks
+3. Superbowl took place: 1-Feb-15
+
+1. Their winning team: New England Patriots
+2. The team they beat: Atlanta Falcons
+3. Superbowl took place: 5-Feb-17
+
+
+
