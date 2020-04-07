@@ -60,8 +60,8 @@ namespace Project_Two
                 input.Dispose();
 
                 //Below outputs the list of the winning teams
-                Console.WriteLine("          List of Winning Teams         ");
-                outfile.WriteLine("          List of Winning Teams         ");
+                Console.WriteLine("            List of Winning Teams");
+                outfile.WriteLine("            List of Winning Teams");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
@@ -77,8 +77,8 @@ namespace Project_Two
                 }
 
                 //Below outputs the list of the top attended superbowl counts
-                Console.WriteLine("          Top 5 Attended Superbowls         ");
-                outfile.WriteLine("          Top 5 Attended Superbowls         ");
+                Console.WriteLine("          Top 5 Attended Superbowls");
+                outfile.WriteLine("          Top 5 Attended Superbowls");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
@@ -94,8 +94,8 @@ namespace Project_Two
 
                 //Below outputs the state that hosted the most superbowls
                 //This section and the MVP section contain adapted code originally from LeAnn Simonson
-                Console.WriteLine("    State That Hosted The Most Superbowls     ");
-                outfile.WriteLine("    State That Hosted The Most Superbowls     ");
+                Console.WriteLine("    State That Hosted The Most Superbowls");
+                outfile.WriteLine("    State That Hosted The Most Superbowls");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
@@ -164,11 +164,19 @@ namespace Project_Two
                 //Defining a query count variable that is used to make a descending list to determine highest loss count.
                 //It creates a group of losing coach data and puts it into a nested query, orders the list, and takes the 
                 //count of the first element in nestedQuery (the coach that lost the most superbowls).
-                var highestLossCount = (from sb in sbDataList group sb by sb.losingCoach into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+                var highestLossCount = (from sb in sbDataList 
+                                        group sb by sb.losingCoach 
+                                        into nestedQuery 
+                                        orderby nestedQuery.Count() descending 
+                                        select nestedQuery).First().Count();
 
                 //defining a losing coach query that is designed to take the coach that lost the most by using a condition that
                 //was found in the nested query. From there, the coaches that lost the most are selected and added to an array
-                var losingCoachQuery = (from sb in sbDataList group sb by sb.losingCoach into losingCoachGroup where losingCoachGroup.Count() == highestLossCount select losingCoachGroup.Key).ToArray();
+                var losingCoachQuery = (from sb in sbDataList 
+                                        group sb by sb.losingCoach 
+                                        into losingCoachGroup 
+                                        where losingCoachGroup.Count() == highestLossCount 
+                                        select losingCoachGroup.Key).ToArray();
 
                 for (var x = 0; x < losingCoachQuery.Length; x++) 
                 {
@@ -180,15 +188,23 @@ namespace Project_Two
 
                 //Below outputs the coach that won the most superbowls
                 //////
-                Console.WriteLine("      Coach That Won The Most Superbowls  ");
-                outfile.WriteLine("      Coach That Won The Most Superbowls  ");
+                Console.WriteLine("     Coach That Won The Most Superbowls  ");
+                outfile.WriteLine("     Coach That Won The Most Superbowls  ");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
                 //The same process as the most losses coach section is used for this query manipulation.
-                var highestWinCount = (from sb in sbDataList group sb by sb.winningCoach into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+                var highestWinCount = (from sb in sbDataList 
+                                       group sb by sb.winningCoach 
+                                       into nestedQuery 
+                                       orderby nestedQuery.Count() descending 
+                                       select nestedQuery).First().Count();
 
-                var winningCoachQuery = (from sb in sbDataList group sb by sb.winningCoach into winningCoachGroup where winningCoachGroup.Count() == highestWinCount select winningCoachGroup.Key).ToArray();
+                var winningCoachQuery = (from sb in sbDataList 
+                                         group sb by sb.winningCoach 
+                                         into winningCoachGroup 
+                                         where winningCoachGroup.Count() == highestWinCount 
+                                         select winningCoachGroup.Key).ToArray();
 
                 for (var x = 0; x < winningCoachQuery.Length; x++) 
                 {
@@ -200,15 +216,23 @@ namespace Project_Two
 
                 //Below outputs the team that won the most superbowls
                 //////
-                Console.WriteLine("     Team That Won The Most Superbowls  ");
-                outfile.WriteLine("     Team That Won The Most Superbowls  ");
+                Console.WriteLine("      Team That Won The Most Superbowls");
+                outfile.WriteLine("      Team That Won The Most Superbowls");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
                 //The same process as the most losses coach section is used for this query manipulation.
-                var teamHighestWinCount = (from sb in sbDataList group sb by sb.winningTeam into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+                var teamHighestWinCount = (from sb in sbDataList 
+                                           group sb by sb.winningTeam 
+                                           into nestedQuery 
+                                           orderby nestedQuery.Count() descending 
+                                           select nestedQuery).First().Count();
 
-                var winningTeamQuery = (from sb in sbDataList group sb by sb.winningTeam into winningTeamGroup where winningTeamGroup.Count() == teamHighestWinCount select winningTeamGroup.Key).ToArray();
+                var winningTeamQuery = (from sb in sbDataList 
+                                        group sb by sb.winningTeam 
+                                        into winningTeamGroup 
+                                        where winningTeamGroup.Count() == teamHighestWinCount 
+                                        select winningTeamGroup.Key).ToArray();
 
                 for (var x = 0; x < winningTeamQuery.Length; x++)
                 {
@@ -220,15 +244,23 @@ namespace Project_Two
 
                 //Below outputs the team that lost the most superbowls
                 //////
-                Console.WriteLine("     Team That Lost The Most Superbowls  ");
-                outfile.WriteLine("     Team That Lost The Most Superbowls  ");
+                Console.WriteLine("     Team That Lost The Most Superbowls");
+                outfile.WriteLine("     Team That Lost The Most Superbowls");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
                 //The same process as the most losses coach section is used for this query manipulation.
-                var teamHighestLossCount = (from sb in sbDataList group sb by sb.losingTeam into nestedQuery orderby nestedQuery.Count() descending select nestedQuery).First().Count();
+                var teamHighestLossCount = (from sb in sbDataList 
+                                            group sb by sb.losingTeam 
+                                            into nestedQuery 
+                                            orderby nestedQuery.Count() descending 
+                                            select nestedQuery).First().Count();
 
-                var losingTeamQuery = (from sb in sbDataList group sb by sb.losingTeam into losingTeamGroup where losingTeamGroup.Count() == teamHighestLossCount select losingTeamGroup.Key).ToArray();
+                var losingTeamQuery = (from sb in sbDataList 
+                                       group sb by sb.losingTeam 
+                                       into losingTeamGroup 
+                                       where losingTeamGroup.Count() == teamHighestLossCount 
+                                       select losingTeamGroup.Key).ToArray();
 
                 for (var x = 0; x < losingTeamQuery.Length; x++)
                 {
@@ -239,8 +271,8 @@ namespace Project_Two
                 outfile.WriteLine("\n");
 
                 //Below outputs the superbowl that had the greatest point difference
-                Console.WriteLine("     Superbowl with Greatest Point Difference  ");
-                outfile.WriteLine("     Superbowl with Greatest Point Difference  ");
+                Console.WriteLine("  Superbowl with Greatest Point Difference");
+                outfile.WriteLine("  Superbowl with Greatest Point Difference");
                 Console.WriteLine("---------------------------------------------\n");
                 outfile.WriteLine("---------------------------------------------\n");
 
@@ -262,13 +294,43 @@ namespace Project_Two
                 {
                     if (sb.pointDifference() == greatestPointDifference)
                     {
-                        Console.WriteLine($"Superbowl {sb.SB} has the greatest point difference of {sb.pointDifference()}");
+                        Console.WriteLine($"- Superbowl {sb.SB} has the greatest point difference of {sb.pointDifference()}");
+                        outfile.WriteLine($"- Superbowl {sb.SB} has the greatest point difference of {sb.pointDifference()}");
                     }
                 }
+                Console.WriteLine("\n");
+                outfile.WriteLine("\n");
+
+                //Below outputs the average attendance
+                Console.WriteLine("     Average Attendance of All Superbowls");
+                outfile.WriteLine("     Average Attendance of All Superbowls");
+                Console.WriteLine("---------------------------------------------\n");
+                outfile.WriteLine("---------------------------------------------\n");
+
+                //declaring integers to invoke an attendance function
+                int totalAttendance = 0;
+                int avgAttendance;
+                int count = 0;
+
+                //adds the attendance onto the total attendance and increases the  
+                //count by one for each superbowl element in superbowl data list
+                foreach (var sb in sbDataList)
+                {
+                    totalAttendance = totalAttendance + sb.Attendance;
+                    count = count + 1;
+                }
+                //simple average attendance function
+                avgAttendance = totalAttendance / count;
+
+                Console.WriteLine($"Average Attendance: {avgAttendance}");
+                outfile.WriteLine($"Average Attendance: {avgAttendance}");
+
+                Console.WriteLine("\n");
+                outfile.WriteLine("\n");
 
                 //End message and file closing
                 outfile.Close(); //closes the outfile (this fixes data stream issues as well)
-                Console.WriteLine("The data displayed above has been written to the TXT file.");
+                Console.WriteLine("The data displayed above has been written to the TXT file");
             } //end of try
 
             catch (Exception e)

@@ -1,4 +1,4 @@
-          List of Winning Teams         
+            List of Winning Teams
 ---------------------------------------------
 
 1. Winning Team: Green Bay Packers
@@ -379,7 +379,7 @@
 5. MVP: Patrick Mahomes
 6. Point Difference: 11
 
-          Top 5 Attended Superbowls         
+          Top 5 Attended Superbowls
 ---------------------------------------------
 
 1. The date the team won: 20-Jan-80
@@ -422,7 +422,7 @@
 6. The stadium: Rose Bowl
 7. The attedance: 101063
 
-    State That Hosted The Most Superbowls     
+    State That Hosted The Most Superbowls
 ---------------------------------------------
 
 Florida hosted the most superbowls. They hosted 16 superbowls.
@@ -595,14 +595,14 @@ Tom Brady won MVP 4 times
 
 
 
-      Coach That Won The Most Superbowls  
+     Coach That Won The Most Superbowls  
 ---------------------------------------------
 
 - Bill Belichick won the most superbowls
 
 
 
-     Team That Won The Most Superbowls  
+      Team That Won The Most Superbowls
 ---------------------------------------------
 
 - Pittsburgh Steelers won the most superbowls
@@ -611,7 +611,7 @@ Tom Brady won MVP 4 times
 
 
 
-     Team That Lost The Most Superbowls  
+     Team That Lost The Most Superbowls
 ---------------------------------------------
 
 - Denver Broncos lost the most superbowls
@@ -620,6 +620,15 @@ Tom Brady won MVP 4 times
 
 
 
-     Superbowl with Greatest Point Difference  
+  Superbowl with Greatest Point Difference
 ---------------------------------------------
+
+- Superbowl XXIV has the greatest point difference of 45
+
+
+     Average Attendance of All Superbowls
+---------------------------------------------
+
+Average Attendance: 77040
+
 
